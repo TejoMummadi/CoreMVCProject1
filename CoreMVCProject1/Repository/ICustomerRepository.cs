@@ -10,7 +10,8 @@ namespace CoreMVCProject1.Repository
     {      
         IEnumerable<Customer> GetCustomers();
         Customer GetCustomer(int id);
-
         void AddCustomer(Customer customer);
+
+        int EditCustomer(int id, Customer customer);
     }
 }

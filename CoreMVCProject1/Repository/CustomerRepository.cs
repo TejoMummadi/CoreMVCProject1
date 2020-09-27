@@ -22,6 +22,11 @@ namespace CoreMVCProject1.Repository
             _dbContext.SaveChanges();
         }
 
+        public int EditCustomer(int id, Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
         public Customer GetCustomer(int id)
         {
             return _dbContext.Customers.SingleOrDefault(a => a.Id == id);

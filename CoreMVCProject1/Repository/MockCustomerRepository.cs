@@ -13,6 +13,11 @@ namespace CoreMVCProject1.Repository
             throw new NotImplementedException();
         }
 
+        public int EditCustomer(int id, Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
         public Customer GetCustomer(int id)
         {
             IEnumerable<Customer> customers = GetCustomers();
