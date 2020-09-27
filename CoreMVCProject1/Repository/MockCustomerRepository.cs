@@ -22,6 +22,7 @@ namespace CoreMVCProject1.Repository
         {
             IEnumerable<Customer> customers = GetCustomers();
             return customers.FirstOrDefault(x => x.Id == id);
+
         }
 
         public IEnumerable<Customer> GetCustomers()

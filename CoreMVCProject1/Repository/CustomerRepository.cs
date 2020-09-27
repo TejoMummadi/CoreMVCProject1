@@ -6,7 +6,7 @@ using CoreMVCProject1.Data;
 using CoreMVCProject1.Models;
 
 namespace CoreMVCProject1.Repository
-{  
+{
     public class CustomerRepository : ICustomerRepository
     {
         private ApplicationDbContext _dbContext = null;
@@ -24,7 +24,20 @@ namespace CoreMVCProject1.Repository
 
         public int EditCustomer(int id, Customer customer)
         {
-            throw new NotImplementedException();
+            var customerInDb = _dbContext.Customers.SingleOrDefault(a => a.Id == id);
+            if (customerInDb != null)
+            {
+                customerInDb.FirstName = customer.FirstName;
+                customerInDb.LastName = customer.LastName;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MobileNo = customer.MobileNo;
+                return _dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException(customer.ToString());
+            }
+
         }
 
         public Customer GetCustomer(int id)

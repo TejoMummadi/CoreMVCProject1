@@ -15,7 +15,7 @@ namespace CoreMVCProject1.Controllers
         {
             _repository = repository;
         }
-
+        
         public IActionResult Index()
         {
             var customers = _repository.GetCustomers();
