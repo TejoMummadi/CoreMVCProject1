@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>All Customer</h1>
+<div class="row">
+    <div class="col-md-5">
+        <ul class="list-group">
+            @foreach (var customer in Model)
+            {
+                <li class="list-group-item">
+                    @* <a href="/home/details/@customer.Id" class="alert-link"> @customer.FirstName @customer.LastName</a>*@
+
+                    @* @Html.ActionLink(customer.FirstName, "Index", "Home", new { id = customer.Id }, new { @class = "alert-link" })*@
+
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@customer.Id" class="alert-link">@customer.FirstName @customer.LastName</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
