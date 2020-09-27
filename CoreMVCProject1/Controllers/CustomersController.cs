@@ -21,5 +21,11 @@ namespace CoreMVCProject1.Controllers
             var customers = _repository.GetCustomers();
             return View(customers);
         }
+
+        public IActionResult Edit(int id)
+        {
+            var customers = _repository.GetCustomer(id);
+            return View(customers);
+        }
     }
 }
