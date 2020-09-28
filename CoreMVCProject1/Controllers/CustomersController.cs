@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreMVCProject1.Models;
 using CoreMVCProject1.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,12 @@ namespace CoreMVCProject1.Controllers
 
         [HttpGet]
         public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Customer customer)
         {
             return View();
         }
